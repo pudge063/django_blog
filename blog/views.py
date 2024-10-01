@@ -10,3 +10,8 @@ def index(request):
     articles = Article.objects.filter(date__lte=timezone.now()).order_by('date')
 
     return render(request, "blog/index.html", {'articles': articles})
+
+
+def publish(request):
+
+    return render(request, "blog/index.html")

@@ -1,0 +1,22 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'blog/css/posts.css' %}">
+
+
+<div class='container'>
+    <h2>Посты</h2>
+    <div class='post-item'>
+        <div class='post-header'>
+            <div class='user-info'>
+                <h3 class='username'>Username</h3>
+                <span class='post-date'>11.09.2001</span>
+            </div>
+            <form action='' method='POST' style='display: inline;'>
+                <input type='hidden' name='post_id'>
+                <button type='submit' class='delete-button'>Удалить</button>
+            </form>
+
+        </div>
+        <p class='post-content'>Sample text</p>
+    </div>
+</div>

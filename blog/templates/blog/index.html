@@ -1,12 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
 </head>
+
 <body>
-    <h1>Посты здесь</h1>
+    {% include 'components/header/header.html' %}
+
+    {% include 'components/posts/posts.html' %}
+    <!-- <h1>Посты здесь</h1>
 
     {% for row in articles %}
 
@@ -14,6 +20,10 @@
         <p>{{ row.text }}</p>
         <p>{{ row.date }}</p>
 
-    {% endfor %}
+    {% endfor %} -->
+
+
+
 </body>
+
 </html>

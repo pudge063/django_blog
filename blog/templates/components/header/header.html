@@ -1,0 +1,31 @@
+{% load static %}
+
+<!-- templates/components/header/header.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Viewport для адаптивности -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Preload стилей для ускоренной загрузки -->
+    <link rel="preload" href="{% static 'blog/css/header.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'blog/css/app.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="{% static 'blog/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/app.css' %}">
+</head>
+<body>
+    <header class="header-container">
+        <div class="header-item">
+            <img src="{% static 'blog/images/beer.png' %}" alt="beer">
+        </div>
+        <div class="header-item">
+            <h1>Pivnuha Space</h1>
+        </div>
+        <div class="header-item">
+            <img src="{% static 'blog/images/beer.png' %}" alt="beer">
+        </div>
+    </header>
+</body>
+</html>
