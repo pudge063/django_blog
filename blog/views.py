@@ -1,17 +1,18 @@
 from django.utils import timezone
-from unittest import loader
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Article
-
-# Create your views here.
+from .forms import ArticleForm
 
 def index(request):
-    articles = Article.objects.filter(date__lte=timezone.now()).order_by('date')
+    articles = Article.objects.filter(date__lte=timezone.now()).order_by('-date')
+    
+    form = ArticleForm()
 
-    return render(request, "blog/index.html", {'articles': articles})
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
 
-
-# def publish(request):
-
-#     return render(request, "blog/index.html")
+    return render(request, "blog/index.html", {'articles': articles, 'form': form})

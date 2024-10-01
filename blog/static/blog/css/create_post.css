@@ -4,10 +4,33 @@
     width: 100%;
 }
 
+.create_post_title {
+    margin-top: 10px;
+    color: #555;
+    width: 100%;
+}
+
 .post-form {
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
+    margin: 20px auto;
+}
+
+p {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+#create_post_title {
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    resize: vertical;
 }
 
 #create_post_content {

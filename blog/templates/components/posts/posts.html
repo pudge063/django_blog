@@ -15,11 +15,14 @@
             </div>
             <form action='' method='POST' style='display: inline;'>
                 <input type='hidden' name='post_id'>
-                <button type='submit' class='delete-button'>Удалить</button>
+                <!-- <button type='submit' class='delete-button'>Удалить</button> -->
             </form>
 
         </div>
         <p class='post-content'>{{ row.text }}</p>
     </div>
     {% endfor %}
+    {% if not articles %}
+        <div class='post-item'>Постов нет.</div>
+    {% endif %}
 </div>
