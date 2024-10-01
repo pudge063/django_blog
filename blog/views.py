@@ -12,6 +12,6 @@ def index(request):
     return render(request, "blog/index.html", {'articles': articles})
 
 
-def publish(request):
+# def publish(request):
 
-    return render(request, "blog/index.html")
+#     return render(request, "blog/index.html")

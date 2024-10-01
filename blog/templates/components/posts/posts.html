@@ -5,11 +5,13 @@
 
 <div class='container'>
     <h2>Посты</h2>
+    {% for row in articles %}
     <div class='post-item'>
         <div class='post-header'>
             <div class='user-info'>
-                <h3 class='username'>Username</h3>
-                <span class='post-date'>11.09.2001</span>
+                <!-- <h3 class='username'>Username</h3> -->
+                <h4 class='username'>{{ row.title }}</h4>
+                <span class='post-date'>{{ row.date }}</span>
             </div>
             <form action='' method='POST' style='display: inline;'>
                 <input type='hidden' name='post_id'>
@@ -17,6 +19,7 @@
             </form>
 
         </div>
-        <p class='post-content'>Sample text</p>
+        <p class='post-content'>{{ row.text }}</p>
     </div>
+    {% endfor %}
 </div>

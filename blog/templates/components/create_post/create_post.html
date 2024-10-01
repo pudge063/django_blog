@@ -1,0 +1,15 @@
+{% load static %}
+
+<link rel="preload" href="{% static 'blog/css/create_post.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="{% static 'blog/css/create_post.css' %}">
+
+
+<div class="container">
+    <h2>Создать пост</h2>
+    <form action="" method="post" class="post-form">
+        <textarea name='post_content' id='create_post_content' placeholder='Введите текст поста' required></textarea>
+        <div class="button-container">
+            <input type='submit' value='Отправить' class='submit-button'>
+        </div>
+    </form>
+</div>
