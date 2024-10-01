@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h2>Посты</h2>
+{% for post in posts %}
+<div class="post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <small>Автор: {{ post.author.username }} | Дата: {{ post.date_posted }}</small>
+    <div>
+        {% if post.author == user %}
+        <!-- Ссылка на редактирование поста -->
+        <a href="{% url 'edit_post' post.id %}" class="edit-post">Редактировать</a>
+        <!-- Ссылка на удаление поста -->
+        <a href="{% url 'delete_post' post.id %}" class="delete-post">Удалить</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+<a href="{% url 'create_post' %}" class="add-post">Добавить пост</a>
+{% endblock %}
