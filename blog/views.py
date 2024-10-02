@@ -1,8 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+
 from .models import Post
 from .forms import PostForm
 from django.utils import timezone
+
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
+from .serializers import PostSerializer
+
 
 def post_list(request):
     posts = Post.objects.filter(date_posted__lte=timezone.now()).order_by('-date_posted')
@@ -50,3 +56,30 @@ def delete_post(request, post_id):
         return redirect('post_list')
 
     return render(request, 'blog/delete_post.html', {'post': post})
+
+
+class PostListAPIView(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    # permission_classes = [IsAuthenticated]
+
+class PostDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    # permission_classes = [IsAuthenticated]
+
+class PostListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        print("Текущий пользователь:", self.request.user)
+        if self.request.user.is_authenticated:
+            serializer.save(author=self.request.user)
+
+
+class PostRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated]

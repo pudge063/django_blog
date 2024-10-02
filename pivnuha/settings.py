@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'users',
+    'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -146,3 +147,12 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'your_email@gmail.com'  # Ваш email
 EMAIL_HOST_PASSWORD = 'your_password'  # Ваш пароль
 DEFAULT_FROM_EMAIL = 'your_email@gmail.com'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
