@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 AUTH_USER_MODEL = 'users.User'
