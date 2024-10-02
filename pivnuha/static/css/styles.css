@@ -1,5 +1,6 @@
+/* Основные стили */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -9,7 +10,8 @@ body {
 header {
     background: #007bff;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -19,27 +21,32 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #ffeb3b; /* Цвет при наведении */
 }
 
 main {
-    padding: 20px;
+    padding: 30px;
     max-width: 800px;
     margin: auto;
+    background: #ffffff; /* Белый фон для основной части */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для основной части */
 }
 
 h2 {
     color: #007bff;
+    margin-bottom: 15px; /* Отступ снизу заголовка */
 }
 
 form {
@@ -55,104 +62,109 @@ form input[type="email"],
 form input[type="password"],
 form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: border 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form textarea:focus {
+    border-color: #007bff; /* Цвет рамки при фокусе */
 }
 
 form button {
     background: #007bff;
     color: #ffffff;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 form button:hover {
     background: #0056b3;
 }
 
-
 /* Стили для списка постов */
 .post {
-    background: #ffffff; /* Белый фон для поста */
-    padding: 15px; /* Отступы внутри поста */
-    margin-bottom: 20px; /* Отступ снизу */
-    border-radius: 5px; /* Скругление углов */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для поста */
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .post h3 {
-    color: #007bff; /* Цвет заголовка поста */
-    margin: 0 0 10px; /* Отступы заголовка */
+    color: #007bff;
+    margin: 0 0 10px;
 }
 
 .post p {
-    font-size: 16px; /* Размер текста поста */
-    line-height: 1.5; /* Междустрочный интервал */
-    margin: 10px 0; /* Отступы для текста поста */
+    font-size: 16px;
+    line-height: 1.6; /* Улучшенный межстрочный интервал */
+    margin: 10px 0;
 }
 
 .post small {
-    color: #888; /* Цвет для информации об авторе и дате */
-    font-size: 14px; /* Размер текста для информации */
+    color: #888;
+    font-size: 14px;
 }
 
 /* Стили для кнопки добавления поста */
 .add-post {
-    display: inline-block; /* Для корректного отображения кнопки */
-    padding: 10px 15px; /* Отступы */
-    background: #007bff; /* Цвет фона кнопки */
-    color: #ffffff; /* Цвет текста кнопки */
-    text-decoration: none; /* Убираем подчеркивание */
-    border-radius: 5px; /* Скругление углов */
-    margin-top: 20px; /* Отступ сверху */
+    display: inline-block;
+    padding: 12px 20px;
+    background: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
 }
 
 .add-post:hover {
-    background: #0056b3; /* Цвет при наведении */
+    background: #0056b3;
 }
-
-/* styles.css */
 
 /* Стили для кнопок редактирования и удаления */
 .edit-post,
 .delete-post {
     display: inline-block;
-    padding: 5px 10px;
-    margin-right: 10px; /* Отступ между кнопками */
-    border-radius: 5px; /* Скругление углов */
-    text-decoration: none; /* Убираем подчеркивание */
-    color: #ffffff; /* Цвет текста */
+    padding: 8px 12px;
+    margin-right: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .edit-post {
-    background-color: #007bff; /* Цвет фона для кнопки редактирования */
+    background-color: #007bff;
 }
 
 .delete-post {
-    background-color: #dc3545; /* Цвет фона для кнопки удаления */
+    background-color: #dc3545;
 }
 
 .edit-post:hover {
-    background-color: #0056b3; /* Цвет при наведении для кнопки редактирования */
+    background-color: #0056b3;
 }
 
 .delete-post:hover {
-    background-color: #c82333; /* Цвет при наведении для кнопки удаления */
+    background-color: #c82333;
 }
-
-
-/* styles.css */
 
 /* Стили для ссылки сброса пароля */
 a {
-    color: #007bff; /* Цвет текста ссылки */
-    text-decoration: none; /* Убираем подчеркивание */
+    color: #007bff;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
 }
 
 a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+    text-decoration: underline;
 }
