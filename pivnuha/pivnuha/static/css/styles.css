@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: #007bff;
+}
+
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #007bff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+
+/* Стили для списка постов */
+.post {
+    background: #ffffff; /* Белый фон для поста */
+    padding: 15px; /* Отступы внутри поста */
+    margin-bottom: 20px; /* Отступ снизу */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для поста */
+}
+
+.post h3 {
+    color: #007bff; /* Цвет заголовка поста */
+    margin: 0 0 10px; /* Отступы заголовка */
+}
+
+.post p {
+    font-size: 16px; /* Размер текста поста */
+    line-height: 1.5; /* Междустрочный интервал */
+    margin: 10px 0; /* Отступы для текста поста */
+}
+
+.post small {
+    color: #888; /* Цвет для информации об авторе и дате */
+    font-size: 14px; /* Размер текста для информации */
+}
+
+/* Стили для кнопки добавления поста */
+.add-post {
+    display: inline-block; /* Для корректного отображения кнопки */
+    padding: 10px 15px; /* Отступы */
+    background: #007bff; /* Цвет фона кнопки */
+    color: #ffffff; /* Цвет текста кнопки */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Скругление углов */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.add-post:hover {
+    background: #0056b3; /* Цвет при наведении */
+}
+
+/* styles.css */
+
+/* Стили для кнопок редактирования и удаления */
+.edit-post,
+.delete-post {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 10px; /* Отступ между кнопками */
+    border-radius: 5px; /* Скругление углов */
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #ffffff; /* Цвет текста */
+}
+
+.edit-post {
+    background-color: #007bff; /* Цвет фона для кнопки редактирования */
+}
+
+.delete-post {
+    background-color: #dc3545; /* Цвет фона для кнопки удаления */
+}
+
+.edit-post:hover {
+    background-color: #0056b3; /* Цвет при наведении для кнопки редактирования */
+}
+
+.delete-post:hover {
+    background-color: #c82333; /* Цвет при наведении для кнопки удаления */
+}
+
+
+/* styles.css */
+
+/* Стили для ссылки сброса пароля */
+a {
+    color: #007bff; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}

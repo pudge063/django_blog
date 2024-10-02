@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-inqfl!8g+8%h)8=s(vnw^8)u$km$43a5c+qif9(n2qwayw7j=*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'psuti.fun', '127.0.0.1']
 
 
 # Application definition
@@ -151,9 +151,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Указываем путь к статическим файлам
+    os.path.join(BASE_DIR, 'static'),
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
