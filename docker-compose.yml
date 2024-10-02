@@ -1,17 +1,6 @@
 version: '3.8'
 
 services:
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_DB: django_db
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
   web:
     build: .
     command: gunicorn pivnuha.wsgi:application --bind 0.0.0.0:8000
@@ -19,16 +8,12 @@ services:
       - .:/code
     ports:
       - "8000:8000"
-    depends_on:
-      - db
     environment:
       - DEBUG=1
       - DJANGO_SECRET_KEY=django-insecure-inqfl!8g+8%h)8=s(vnw^8)u$km$43a5c+qif9(n2qwayw7j=*
-      - DB_NAME=django_db
-      - DB_USER=myuser
-      - DB_PASSWORD=mypassword
-      - DB_HOST=db
+      - DB_NAME=test_db
+      - DB_USER=user1
+      - DB_PASSWORD=1234
+      - DB_HOST=psuti.fun
       - DB_PORT=5432
-
-volumes:
-  postgres_data:
+      
