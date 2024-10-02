@@ -7,10 +7,10 @@ while ! nc -z $DB_HOST $DB_PORT; do
 done
 
 # Применяем миграции
-python pivnuha/manage.py migrate
+python manage.py migrate
 
 # Собираем статические файлы
-python pivnuha/manage.py collectstatic --noinput
+python manage.py collectstatic --noinput
 
 # Запускаем Gunicorn
 exec "$@"

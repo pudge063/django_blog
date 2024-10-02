@@ -3,13 +3,13 @@ version: '3.8'
 services:
   web:
     build: .
-    command: gunicorn pivnuha.wsgi:application --bind 0.0.0.0:8000
+    # command: gunicorn pivnuha.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
       - "8000:8000"
     environment:
-      - DEBUG=1
+      - DEBUG=0
       - DJANGO_SECRET_KEY=django-insecure-inqfl!8g+8%h)8=s(vnw^8)u$km$43a5c+qif9(n2qwayw7j=*
       - DB_NAME=test_db
       - DB_USER=user1
