@@ -79,6 +79,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pivnuha.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://psuti.fun',
+    'https://psuti.fun',
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
